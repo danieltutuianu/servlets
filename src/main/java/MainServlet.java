@@ -12,12 +12,15 @@ public class MainServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String username = request.getParameter("username");
+        Integer number1 = Integer.parseInt(request.getParameter("number1"));
+        Integer number2 = Integer.parseInt(request.getParameter("number2"));
 
 
+        Integer sum = number1 + number2;
 
 
             request.setAttribute("validation", true);
+            request.setAttribute("sum", sum);
 
             RequestDispatcher dispatcher
                     = request.getRequestDispatcher("/WEB-INF/servlets/form.jsp");

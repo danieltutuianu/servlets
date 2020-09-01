@@ -10,12 +10,18 @@
 	<body>
 		<form method="POST" action="sendData">
 
-			Please enter your username
+			Please enter number 1
 
-			Please enter your password
-			<input type="text" name="username"/>
+			<input type="text" name="number1"/>
+			<br />
+			<br />
+			Please enter number 2
 
-			<input type="submit" value="submit">
+			<input type="text" name="number2"/>
+
+			<br />
+			<br />
+			<input type="submit" value="Get sum">
 
 		</form>
 	</body>

@@ -10,16 +10,11 @@
 
 	<body>
 	<c:if test="${validation == true}">
-	        <h3>Validation failed </h3>
+	        <h3>Sum is ${sum}</h3>
 	</c:if>
 
-<c:if test="${validation == false}">
-	       <h2>Portocale</h2>
-	</c:if>
 
-<h1>param=${validation}</h1>
-
- <p>Today's date: <%= (new java.util.Date()).toLocaleString()%></p>
+	<c:if test="${!validation}">
 
 		<form method="POST" action="sendData">
 
@@ -31,5 +26,7 @@
 			<input type="submit" value="submit">
 
 		</form>
+	</c:if>
+
 	</body>
 </html>
