@@ -2,27 +2,41 @@
 "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-	<head>
-                                <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
-		<title>Login Page</title>
-	</head>
+<head>
+    <jsp:include page="head.jsp"/>
+    <title>Sum Page</title>
+</head>
 
-	<body>
-		<form method="POST" action="sendData">
+<body>
+<form method="POST" class="form-signin" action="./sendData">
+    Please enter number 1*
 
-			Please enter number 1
+    <input type="text" name="number1" id="number1" required class="form-control"/>
+    <br/>
+    <br/>
+    Please enter number 2*
 
-			<input type="text" name="number1"/>
-			<br />
-			<br />
-			Please enter number 2
+    <input type="text" name="number2" id="number2" required class="form-control"/>
 
-			<input type="text" name="number2"/>
+    <br/>
+    <br/>
+    <input type="submit" class="btn btn-primary" value="Get sum ${sum}">
+    <c:choose>
+        <c:when test="${requestScope.user == null }">
+            <br/>
+            <br/>
+            <a href="./doLogout">Logout</a>
+        </c:when>
+        <c:otherwise>
+            <br/>
+            <br/>
+            <a href="./register.jsp">Register</a>
+            &nbsp;
+            &nbsp;
+            <a href="./login.jsp">Login</a>
+        </c:otherwise>
+    </c:choose>
 
-			<br />
-			<br />
-			<input type="submit" value="Get sum">
-
-		</form>
-	</body>
+</form>
+</body>
 </html>
